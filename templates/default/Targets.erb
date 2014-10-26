@@ -7,6 +7,15 @@ menu = Top
 title = Smokeping Network Latency Grapher
 remark = Welcome to the SmokePing website of <%= node['smokeping']['site_remark_owner'] %>
 
+
+menu = Targets
+<% @targets.each do |target| %>
+
+title = target['title']
+probe = target['probe']
+host = target['host']
+<% end %>
+
 <% @nodes.map{|n| n.chef_environment}.uniq.reject{|n| n.to_s == ""}.each do |environment| %>
 + <%= environment %>
 menu = <%= environment %>

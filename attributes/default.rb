@@ -30,6 +30,13 @@ default['smokeping']['smtp_host']  = nil
 
 default['smokeping']['syslog_facility'] = 'local0'
 
+default['smokeping']['targets'] = [
+  {
+    'name' => 'localhost',
+    'probe' => 'FPing',
+    'target' => '127.0.0.1',
+  },
+]
 default['smokeping']['alerts'] = [
   {
     'name' => 'bigloss',

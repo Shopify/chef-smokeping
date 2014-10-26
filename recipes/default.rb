@@ -40,7 +40,8 @@ servers = search(:node, 'recipes:smokeping*')
     mode '0644'
     variables(
       :nodes => servers,
-      :alerts => node['smokeping']['alerts']
+      :alerts => node['smokeping']['alerts'],
+      :targets => node['smokeping']['targets']
     )
     notifies :restart, 'service[smokeping]'
   end
